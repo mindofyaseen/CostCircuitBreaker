@@ -1,0 +1,26 @@
+{
+  "scenario_id": "SCENARIO_5",
+  "name": "Well-Architected Serverless Microservice",
+  "prompt": "Deploy a lightweight REST microservice with on-demand persistence and HTTP gateway.",
+  "budget_limit_usd": 50.0,
+  "resources": [
+    {
+      "Id": "PublicHttpEndpoint",
+      "Type": "AWS::ApiGateway::HttpApi",
+      "Properties": {},
+      "Quantity": 1
+    },
+    {
+      "Id": "OrderProcessorFunction",
+      "Type": "AWS::Lambda::Function",
+      "Properties": {},
+      "Quantity": 2
+    },
+    {
+      "Id": "OrdersStateStore",
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {},
+      "Quantity": 1
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "scenario_id": "SCENARIO_2",
+  "name": "High-Compute Worker Fleet & Load Balancer",
+  "prompt": "Deploy a fleet of background queue processors with an Application Load Balancer to handle video rendering jobs.",
+  "budget_limit_usd": 40.0,
+  "resources": [
+    {
+      "Id": "WorkerComputeFleet",
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "InstanceType": "c6i.2xlarge",
+        "BlockDeviceMappings": [
+          {
+            "Ebs": {
+              "VolumeSize": 100
+            }
+          }
+        ]
+      },
+      "Quantity": 4
+    },
+    {
+      "Id": "PublicIngressALB",
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "Type": "application"
+      },
+      "Quantity": 1
+    }
+  ]
+}

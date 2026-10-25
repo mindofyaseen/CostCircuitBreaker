@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CostCircuitBreaker | Autonomous FinOps Safety Tool for AI DevOps Agents</title>
+  <meta name="description" content="Autonomous FinOps safety gate preventing runaway cloud deployment costs for AI DevOps Agents built with Strands Agents SDK and Amazon Bedrock.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-glow glow-1"></div>
+  <div class="background-glow glow-2"></div>
+
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <span class="brand-icon">⚡</span>
+        <div>
+          <h1>CostCircuitBreaker</h1>
+          <p class="brand-tagline">Autonomous FinOps Safety Tool for AI DevOps Agents</p>
+        </div>
+      </div>
+      <div class="header-badges">
+        <span class="badge badge-aws">AWS Bedrock + Strands SDK</span>
+        <span class="badge badge-challenge">Weekend Challenge Entry</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero-quote">
+      <blockquote>
+        "I gave my DevOps agent an AWS Pricing Circuit Breaker, because it tried to deploy a $2,480/month cluster for a hobby project."
+      </blockquote>
+    </section>
+
+    <!-- Top Stats Row -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Interception Rate</span>
+        <span class="stat-value text-emerald">100.0%</span>
+        <span class="stat-sub">4 / 4 Runaway Stacks Intercepted</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">False Positive Rate</span>
+        <span class="stat-value text-blue">0.0%</span>
+        <span class="stat-sub">0 False Alarms on Serverless</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Prevented Cloud Waste</span>
+        <span class="stat-value text-gradient">$2,481.26</span>
+        <span class="stat-sub">Monthly Burn Blocked Over 5 Tests</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Average Cost Reduction</span>
+        <span class="stat-value text-purple">98.0%</span>
+        <span class="stat-sub">Via Serverless Re-Architecture</span>
+      </div>
+    </section>
+
+    <!-- Interactive Playground -->
+    <section class="playground-layout">
+      <!-- Left Panel: Controls & Input -->
+      <div class="panel control-panel">
+        <div class="panel-header">
+          <h3>🎯 Scenario & Control Hub</h3>
+          <span class="badge badge-neutral">Input Spec</span>
+        </div>
+
+        <div class="control-group">
+          <label for="scenarioSelect">Select Workload Scenario:</label>
+          <select id="scenarioSelect" class="form-select">
+            <option value="1">Scenario 1: E-Commerce Search & DB ($671.24/mo -> $10.50/mo)</option>
+            <option value="2">Scenario 2: High-Compute Worker Fleet ($1,041.23/mo -> $10.50/mo)</option>
+            <option value="3">Scenario 3: Doc Site with Accidental NAT ($66.90/mo -> $10.50/mo)</option>
+            <option value="4">Scenario 4: Provisioned IOPS & Idle IPs ($743.89/mo -> $10.50/mo)</option>
+            <option value="5">Scenario 5: Optimal Serverless Microservice ($9.00/mo - PASS)</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <div class="slider-header">
+            <label for="budgetSlider">Monthly Budget Ceiling:</label>
+            <span id="budgetValue" class="badge badge-budget">$50.00 / month</span>
+          </div>
+          <input type="range" id="budgetSlider" min="10" max="250" value="50" step="5" class="form-slider">
+        </div>
+
+        <!-- The Tool Switch -->
+        <div class="tool-switch-container">
+          <div class="tool-info">
+            <span class="tool-icon">🛠️</span>
+            <div>
+              <strong>evaluate_aws_cost_circuit_breaker</strong>
+              <p>Deterministic Strands Tool Gate</p>
+            </div>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toolToggle" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="prompt-box">
+          <span class="box-label">User Prompt</span>
+          <p id="promptText" class="prompt-content"></p>
+        </div>
+
+        <div class="code-preview">
+          <span class="box-label">Candidate IaC Resources (JSON)</span>
+          <pre id="candidateJson"></pre>
+        </div>
+      </div>
+
+      <!-- Right Panel: Live Execution Outcome -->
+      <div class="panel outcome-panel">
+        <div class="panel-header">
+          <h3>🚀 Live Agent Verdict</h3>
+          <span id="executionBadge" class="badge"></span>
+        </div>
+
+        <div id="verdictCard" class="verdict-banner">
+          <!-- Dynamically populated by app.js -->
+        </div>
+
+        <div class="cost-comparison-strip">
+          <div class="cost-item">
+            <span class="cost-label">Candidate Spend</span>
+            <span id="candidateCost" class="cost-val text-red"></span>
+          </div>
+          <div class="cost-arrow">➔</div>
+          <div class="cost-item">
+            <span class="cost-label">Verified Final Spend</span>
+            <span id="finalCost" class="cost-val text-green"></span>
+          </div>
+          <div class="cost-divider"></div>
+          <div class="cost-item">
+            <span class="cost-label">Net Monthly Savings</span>
+            <span id="savingsVal" class="cost-val text-blue"></span>
+          </div>
+        </div>
+
+        <!-- Architectural Transformation Breakdown -->
+        <div class="breakdown-section">
+          <h4>🔄 Architectural Replacements (Serverless Synthesizer)</h4>
+          <div id="replacementsContainer" class="replacements-list">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Approved Serverless Template Snippet -->
+        <div class="template-section">
+          <div class="template-header">
+            <h4>📄 Approved Serverless CloudFormation Snippet</h4>
+            <button id="copyBtn" class="btn-copy">Copy Snippet</button>
+          </div>
+          <pre id="templateCode" class="template-code"></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Evidence Matrix Table -->
+    <section class="benchmark-table-section">
+      <div class="section-title">
+        <h3>📊 5-Scenario Automated Benchmark Matrix</h3>
+        <p>Measured against US-East-1 AWS Official Reference Rates with 100% Interception Accuracy</p>
+      </div>
+
+      <div class="table-container">
+        <table class="benchmark-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Budget</th>
+              <th>Base Agent (Tool OFF)</th>
+              <th>Protected Agent (Tool ON)</th>
+              <th>Dollars Saved</th>
+              <th>Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Scenario 1:</strong> E-Commerce Search & DB</td>
+              <td>$50.00</td>
+              <td class="text-red">$671.24/mo</td>
+              <td class="text-green"><strong>$10.50/mo</strong></td>
+              <td class="text-blue"><strong>$660.74 (98.4%)</strong></td>
+              <td><span class="status-pill pill-red">BLOCKED & REWRITTEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>Scenario 2:</strong> High-Compute Worker Fleet</td>
+              <td>$40.00</td>
+              <td class="text-red">$1,041.23/mo</td>
+              <td class="text-green"><strong>$10.50/mo</strong></td>
+              <td class="text-blue"><strong>$1,030.73 (99.0%)</strong></td>
+              <td><span class="status-pill pill-red">BLOCKED & REWRITTEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>Scenario 3:</strong> Doc Site with Accidental NAT</td>
+              <td>$15.00</td>
+              <td class="text-red">$66.90/mo</td>
+              <td class="text-green"><strong>$10.50/mo</strong></td>
+              <td class="text-blue"><strong>$56.40 (84.3%)</strong></td>
+              <td><span class="status-pill pill-red">BLOCKED & REWRITTEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>Scenario 4:</strong> Provisioned IOPS & Idle IPs</td>
+              <td>$60.00</td>
+              <td class="text-red">$743.89/mo</td>
+              <td class="text-green"><strong>$10.50/mo</strong></td>
+              <td class="text-blue"><strong>$733.39 (98.6%)</strong></td>
+              <td><span class="status-pill pill-red">BLOCKED & REWRITTEN</span></td>
+            </tr>
+            <tr>
+              <td><strong>Scenario 5:</strong> Optimal Serverless App</td>
+              <td>$50.00</td>
+              <td class="text-green">$9.00/mo</td>
+              <td class="text-green"><strong>$9.00/mo</strong></td>
+              <td class="text-muted">$0.00 (Optimal)</td>
+              <td><span class="status-pill pill-green">PASSED (OPTIMAL)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p>CostCircuitBreaker — Built for the AWS Builder Center Weekend Challenge ("Give your Agent a Tool")</p>
+      <p class="footer-meta">SDK: Strands Agents SDK 1.62.0 | Foundation Model: Amazon Bedrock | Region: us-east-1</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

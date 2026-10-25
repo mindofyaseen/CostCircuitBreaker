@@ -1,0 +1,26 @@
+{
+  "scenario_id": "SCENARIO_3",
+  "name": "Documentation Website with Accidental NAT",
+  "prompt": "Deploy a documentation website with S3 and CloudFront, but agent added private VPC NAT Gateways for internal CI/CD.",
+  "budget_limit_usd": 15.0,
+  "resources": [
+    {
+      "Id": "StaticAssetsBucket",
+      "Type": "AWS::S3::Bucket",
+      "Properties": {},
+      "Quantity": 1
+    },
+    {
+      "Id": "UnnecessaryNatGatewayA",
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {},
+      "Quantity": 1
+    },
+    {
+      "Id": "UnnecessaryNatGatewayB",
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {},
+      "Quantity": 1
+    }
+  ]
+}

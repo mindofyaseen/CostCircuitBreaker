@@ -1,0 +1,36 @@
+{
+  "scenario_id": "SCENARIO_1",
+  "name": "E-Commerce Search & Transactional Database",
+  "prompt": "Deploy a scalable e-commerce product catalog with full-text search and transactional PostgreSQL database.",
+  "budget_limit_usd": 50.0,
+  "resources": [
+    {
+      "Id": "ProductSearchDomain",
+      "Type": "AWS::OpenSearchService::Domain",
+      "Properties": {
+        "ClusterConfig": {
+          "InstanceType": "m6g.large.search",
+          "InstanceCount": 2,
+          "DedicatedMasterEnabled": false
+        }
+      },
+      "Quantity": 1
+    },
+    {
+      "Id": "OrdersDatabase",
+      "Type": "AWS::RDS::DBInstance",
+      "Properties": {
+        "DBInstanceClass": "db.m6g.xlarge",
+        "MultiAZ": true,
+        "AllocatedStorage": 200
+      },
+      "Quantity": 1
+    },
+    {
+      "Id": "EgressNatGateways",
+      "Type": "AWS::EC2::NatGateway",
+      "Properties": {},
+      "Quantity": 2
+    }
+  ]
+}
