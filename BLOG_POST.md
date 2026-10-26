@@ -1,9 +1,11 @@
 # I gave my DevOps agent an AWS Pricing Circuit Breaker, because it tried to deploy a $2,480/mo cluster for a hobby project
 
+![CostCircuitBreaker Cover Image](https://raw.githubusercontent.com/mindofyaseen/CostCircuitBreaker/main/docs/screenshots/cover_image.jpg)
+
 > **AWS Builder Center Weekend Challenge:** Give your Agent a Tool  
 > **Tags:** `#strands-agents` `#amazon-bedrock` `#aws-lambda` `#agents` `#tools` `#finops` `#python`  
 > **GitHub Repository:** [https://github.com/mindofyaseen/CostCircuitBreaker](https://github.com/mindofyaseen/CostCircuitBreaker)  
-> **Demo Video:** [Link to your 2-minute video]
+> **Demo & Screenshots:** [https://github.com/mindofyaseen/CostCircuitBreaker#visual-dashboard-walkthrough](https://github.com/mindofyaseen/CostCircuitBreaker#visual-dashboard-walkthrough)
 
 ---
 
