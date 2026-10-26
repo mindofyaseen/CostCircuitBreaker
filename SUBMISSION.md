@@ -65,9 +65,18 @@ We evaluated the agent across **5 realistic cloud architecture benchmarks**:
 
 ---
 
-## 6. Demo Video Script (< 3 Minutes)
+## 6. Visual Demo & Proof of Execution
+*(Screenshots & Live Dashboard)*
 
-*Use this exact script when recording your 2 to 3 minute demo video for YouTube/Loom:*
+* **Interactive Web Demo Walkthrough:** [https://github.com/mindofyaseen/CostCircuitBreaker#visual-dashboard-walkthrough](https://github.com/mindofyaseen/CostCircuitBreaker#visual-dashboard-walkthrough)
+* **High-Resolution Screenshots:**
+  1. *Tool ON (Runaway Deployment Intercepted & Re-architected):* [View Screenshot 1](https://raw.githubusercontent.com/mindofyaseen/CostCircuitBreaker/main/docs/screenshots/screenshot_1_tool_on_intercepted.png)
+  2. *Tool OFF (Fatal Unbudgeted Bill Shock):* [View Screenshot 2](https://raw.githubusercontent.com/mindofyaseen/CostCircuitBreaker/main/docs/screenshots/screenshot_2_tool_off_bill_shock.png)
+  3. *Automated 5-Scenario Benchmark Matrix:* [View Screenshot 3](https://raw.githubusercontent.com/mindofyaseen/CostCircuitBreaker/main/docs/screenshots/screenshot_3_benchmark_matrix.png)
+
+---
+
+## 7. Demo Video Script (Reference)
 
 ### [0:00 - 0:30] Introduction & The Fatal Flaw
 > *"Hi everyone! For the AWS Builder Center Weekend Challenge, I asked a simple question: What happens when an autonomous AI DevOps agent writes your cloud infrastructure?*

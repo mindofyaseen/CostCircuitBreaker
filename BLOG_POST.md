@@ -73,7 +73,18 @@ The agent is strictly forbidden from approving any infrastructure deployment on 
 
 ## The Live "Before vs After" Contrast
 
-To prove the impact of this single tool, I built an interactive dashboard and ran automated stress tests across **5 real-world cloud architecture scenarios**:
+### 1. Tool OFF: Fatal Unbudgeted Bill Shock (Base Agent)
+When the tool is disabled, the base agent blindly generates expensive clusters with zero budget awareness:
+
+![Tool OFF: Fatal Unbudgeted Bill Shock](https://raw.githubusercontent.com/mindofyaseen/CostCircuitBreaker/main/docs/screenshots/screenshot_2_tool_off_bill_shock.png)
+
+### 2. Tool ON: Runaway Deployment Intercepted & Re-Architected to Serverless
+With `evaluate_aws_cost_circuit_breaker` active, the agent immediately catches the overage, halts deployment, and synthesizes a $10.50/mo serverless alternative:
+
+![Tool ON: Intercepted & Re-architected](https://raw.githubusercontent.com/mindofyaseen/CostCircuitBreaker/main/docs/screenshots/screenshot_1_tool_on_intercepted.png)
+
+### 3. Full 5-Scenario Automated Benchmark Matrix
+![5-Scenario Benchmark Matrix](https://raw.githubusercontent.com/mindofyaseen/CostCircuitBreaker/main/docs/screenshots/screenshot_3_benchmark_matrix.png)
 
 | Scenario | Monthly Budget | Base Agent Spend (Tool OFF) | Protected Agent Spend (Tool ON) | Dollars Saved | Final Verdict |
 | :--- | :--- | :--- | :--- | :--- | :--- |

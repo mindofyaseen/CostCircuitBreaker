@@ -13,6 +13,19 @@ Powered by **Amazon Bedrock**, **Strands Agents SDK (1.62.0)**, and **AWS Lambda
 
 ---
 
+## 📸 Visual Dashboard Walkthrough
+
+### 1. Tool ON: Runaway Deployment Intercepted & Re-Architected
+![CostCircuitBreaker Tool ON](docs/screenshots/screenshot_1_tool_on_intercepted.png)
+
+### 2. Tool OFF: Fatal Unbudgeted Bill Shock (Base Agent)
+![CostCircuitBreaker Tool OFF](docs/screenshots/screenshot_2_tool_off_bill_shock.png)
+
+### 3. Automated 5-Scenario Benchmark Matrix
+![CostCircuitBreaker Benchmark Matrix](docs/screenshots/screenshot_3_benchmark_matrix.png)
+
+---
+
 ## 🚨 The Fatal Flaw in Autonomous Cloud Agents
 
 AI coding and cloud engineering agents are rapidly gaining the ability to write and deploy Infrastructure-as-Code (IaC) directly to AWS accounts. However, LLMs have **zero innate understanding of dollar bills or financial consequences**:
